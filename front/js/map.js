@@ -12,188 +12,22 @@ map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
 //데이터 넣기 (더미데이터)
 
-const dataSet = [
-  {
-    title: "떡반집 본점",
-    address: "대전광역시 서구 둔산2동 1091",
-    url: "https://youtu.be/wYu6GwY2i7I",
-    category: "분식",
-  },
-  {
-    title: "미도인 대전 둔산",
-    address: "대전 서구 둔산로31번길 51",
-    url: "https://youtu.be/b600HLzOwdw",
-    category: "양식",
-  },
-  {
-    title: "쉐이크쉑 대전 타임월드점",
-    address: "대전 서구 대덕대로 219 (둔산동) EAST동 1층 쉐이크쉑(둔산동, 갤러리아타임월드)",
-    url: "https://youtu.be/6vcyqCRpf6g",
-    category: "양식",
-  },
-  {
-    title: "땀땀",
-    address: "대전 서구 대덕대로 211 갤러리아 타임월드 11층 고메이월드",
-    url: "https://youtu.be/swD4t0hGSPQ",
-    category: "기타",
-  },
-  {
-    title: "불타는쪽갈비",
-    address: "대전 서구 둔지로 36 갤러리타워",
-    url: "https://youtu.be/zasBogb3E0A",
-    category: "구이",
-  },
-  {
-    title: "상무초밥 둔산직영점",
-    address: "대전 서구 둔산로31번길 66",
-    url: "https://youtu.be/aEZkWTbDBmI",
-    category: "회/초밥",
-  },
-  {
-    title: "태평소국밥",
-    address: "대전 서구 둔산로31번길 52 덕삼빌딩 1층 102호",
-    url: "hhttps://youtu.be/45xIfh-l-qM",
-    category: "한식",
-  },
-  {
-    title: "동백카츠",
-    address: "대전광역시 서구 둔산로31번길 56 1층",
-    url: "https://youtu.be/SRiM2ltynbo",
-    category: "일식",
-  },
-  {
-    title: "도군샤브",
-    address: "대전광역시 서구 둔산남로9번길 51 1층 도군샤부",
-    url: "https://youtube.com/shorts/wQ_kWpKc7_0?feature=share",
-    category: "일식",
-  },
-  {
-    title: "대전 둔산동 맛집 별달돈까스 카페",
-    address: "대전광역시 서구 둔산로 30 2층",
-    url: "https://youtube.com/shorts/ryUllURGauM?feature=share",
-    category: "일식",
-  },
-  {
-    title: "피슈마라홍탕 대전둔산점",
-    address: "대전광역시 서구 대덕대로 248 A동 102호",
-    url: "https://youtu.be/jpJfq9_Vy5E",
-    category: "중식",
-  },
-  {
-    title: "탕화쿵푸마라탕 대전둔산점",
-    address: "대전 서구 둔산로31번길 38 2층",
-    url: "https://youtube.com/shorts/4ScevPDV1hQ?feature=share",
-    category: "중식",
-  },
-  {
-    title: "짬뽕관 대전둔산점",
-    address: "대전 서구 대덕대로234번길 38",
-    url: "https://youtu.be/e7vwRXgQNsI",
-    category: "중식",
-  },
-  {
-    title: "고기명작",
-    address: "대전광역시 서구 둔산로51번길 38",
-    url: "https://youtu.be/tZTQ1BzV_oU",
-    category: "구이",
-  },
-  {
-    title: "보끄미 둔산점",
-    address: "대전광역시 서구 대덕대로242번길 15 둔산의 아침",
-    url: "https://youtu.be/RW-WJVmWnfg",
-    category: "한식",
-  },
-  {
-    title: "티켓부스",
-    address: "대전 서구 둔산남로9번길 77 1층",
-    url: "https://youtu.be/wk1rXfe45JU",
-    category: "기타",
-  },
-  {
-    title: "현정떡볶이",
-    address: "대전광역시 서구 대덕대로233번길 20",
-    url: "https://youtu.be/AQYeQNz-iOM",
-    category: "분식",
-  },
-  {
-    title: "봉달이명품김밥 둔산점",
-    address: "대전광역시 서구 둔산로 15 향촌아파트",
-    url: "https://youtu.be/kYzwIXLhFyU",
-    category: "분식",
-  },
-  {
-    title: "강남으로간고래",
-    address: "대전광역시 서구 둔지로 13 B동 101호 102호 103호",
-    url: "https://youtu.be/ly-eJf3Kc0M",
-    category: "회/초밥",
-  },
-  {
-    title: "하나참치 둔산점",
-    address: "대전광역시 서구 대덕대로175번길 40 두운힐스타운",
-    url: "https://youtu.be/4t6NP4oSSzQ",
-    category: "회/초밥",
-  },
-  {
-    title: "초연정",
-    address: "대전 서구 둔산로31번길 10-35 1층 초연정",
-    url: "https://youtu.be/31LCZiZOG5Y",
-    category: "회/초밥",
-  },
-  {
-    title: "PIENO",
-    address: "대전광역시 서구 둔산로31번길 38 2층",
-    url: "https://youtu.be/a4Vv5VCfJ58",
-    category: "양식",
-  },
-  {
-    title: "텀즈업브로",
-    address: "대전광역시 서구 대덕대로220번길 20",
-    url: "https://youtu.be/j1hmtFqHNX8",
-    category: "양식",
-  },
-  {
-    title: "해쉬",
-    address: "대전광역시 서구 둔산로 18 향촌월드프라자109호",
-    url: "https://youtu.be/YokmuwFCl_o",
-    category: "양식",
-  },
-  {
-    title: "소코아 대전둔산점",
-    address: "대전 서구 대덕대로233번길 17 1층 104-1호",
-    url: "https://youtu.be/BHMG3UvWu34",
-    category: "일식",
-  },
-  {
-    title: "정돈 갤러리아백화점 타임월드점",
-    address: "대전 서구 대덕대로 211",
-    url: "https://youtu.be/9Gb1-L3OszU",
-    category: "일식",
-  },
-  {
-    title: "이비가짬뽕 시청점",
-    address: "대전광역시 서구 둔산중로40번길 19 1층",
-    url: "https://youtu.be/Xru9bSDDpKw",
-    category: "중식",
-  },
-  {
-    title: "더베이징",
-    address: "대전광역시 서구 대덕대로195번길 58",
-    url: "https://youtu.be/BseGSz0EzFY",
-    category: "중식",
-  },
-  {
-    title: "짬뽕지존 대전둔산점",
-    address: "대전 서구 둔산서로 13 나우빌딩 1층",
-    url: "https://youtu.be/JrSY0rWwkdY",
-    category: "중식",
-  },
-  {
-    title: "정든밥",
-    address: "대전광역시 서구 둔산로31번길 72",
-    url: "https://youtu.be/aUVUFKS76nk",
-    category: "한식",
-  },
-];
+async function getDataSet(category) {
+  let qs = category;
+  if (!qs) {
+    qs = "";
+  }
+
+  const dataSet = await axios({
+    method: "get", // http method
+    url: url + `/restaurants?category=${qs}`,
+    headers: {}, // packet header
+    data: {}, // packet body
+  });
+  return dataSet.data.result;
+}
+
+getDataSet();
 
 // 주소-좌표 변환
 var geocoder = new kakao.maps.services.Geocoder();
