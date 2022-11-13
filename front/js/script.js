@@ -19,7 +19,7 @@ async function getDataSet(category) {
     }
     const dataSet = await axios({
         method: "get", // http method
-        url: `http://gusekgus4746.dothome.co.kr/Map/front/index.html/restaurants?category=${qs}`,
+        url: `http://15.165.214.206:3000/restaurants?category=${qs}`,
         headers: {}, // packet header
         data: {}, // packet body
     });
